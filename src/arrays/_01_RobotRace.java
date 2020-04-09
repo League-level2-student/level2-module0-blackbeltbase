@@ -29,6 +29,7 @@ int robotPosition2 = 500;
 int robotPosition3 =500;
 int robotPosition4 = 500;
 int robotPosition5 = 500;
+
 while(robotPosition1 != 0 && robotPosition2 != 0 && robotPosition3 != 0 && robotPosition4 != 0 && robotPosition5 != 0 ) {
 for(int i = 0; i < arrayORobots.length; i++) {
 	Random random = new Random();
@@ -39,13 +40,34 @@ for(int i = 0; i < arrayORobots.length; i++) {
 	 robotPosition3 = arrayORobots[2].getY();
 	 robotPosition4 = arrayORobots[3].getY();
 	 robotPosition5 = arrayORobots[4].getY();
-	 if(arrayORobots[i].getY() < 10) {
-		 JOptionPane.showMessageDialog(null, "Robot "+i+1 +" wins!");
+	 if(arrayORobots[i].getY() < 10 && arrayORobots[i].getY() >0) {
+		 JOptionPane.showMessageDialog(null, "Robot "+i +" wins!");
 		 break;
 	 }
-}}
-	//6. use a while loop to repeat step 5 until a robot has reached the top of the screen.
+}
 
+}
+	//6. use a while loop to repeat step 5 until a robot has reached the top of the screen.
+for(int i = 0; i < arrayORobots.length; i++) {
+	arrayORobots[i].moveTo(0,500);
+}
+boolean isCircleCompleted = false;
+while(isCircleCompleted == false) {
+for(int i = 0; i < arrayORobots.length; i++) {
+	Random random = new Random();
+	int r = random.nextInt(50);
+	for(int x = 0; x<r; x++) {
+		arrayORobots[i].move(5);
+		arrayORobots[i].turn(1);
+	}
+	 if(arrayORobots[i].getY() <500 && arrayORobots[i].getX() ==0) {
+		 JOptionPane.showMessageDialog(null, "Robot "+i +" wins!");
+		 isCircleCompleted = true;
+		 break;
+	 }
+}
+
+}
 	//7. declare that robot the winner and throw it a party!
 
 	//8. try different races with different amounts of robots.

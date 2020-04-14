@@ -1,8 +1,6 @@
 /* Paste the code into a new Processing sketch and complete the steps. */
 
-----------------------------------------------------------------------------
-//NOTE: Processing does not save on my PC, so code is copied and pasted here
------------------------------------------------------------------------------
+
 //1. create an array of ints. don't initialize it yet.
 
 int[] intArray;
